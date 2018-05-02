@@ -29,7 +29,7 @@ public class ClickMeBabyPage {
 
     private static final String PAGE_URL = "clickmebaby.php";
 
-    public ClickMeBabyPage() throws MalformedURLException {
+    public ClickMeBabyPage() {
         driver = WebDriverSingleton.getInstance().getDriver();
         PageFactory.initElements(driver, this);
     }
