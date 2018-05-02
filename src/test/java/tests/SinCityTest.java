@@ -1,11 +1,9 @@
 package tests;
 
 import base.TestBase;
-import categories.SmokeTest;
 import enumerators.SinType;
 import models.Sin;
 import org.junit.Test;
-import org.junit.experimental.categories.Category;
 import pages.SinCityPage;
 import pages.SpartaPage;
 
@@ -15,9 +13,8 @@ import java.util.List;
 
 public class SinCityTest extends TestBase {
 
-    @Category(SmokeTest.class)
     @Test
-    public void testNewSin() throws MalformedURLException, InterruptedException {
+    public void testNewSin() {
         Sin spiderSin = new Sin("zabil som oboch robov", "furby", "zabil som ho lopatou");
         SinCityPage sinCityPage = new SinCityPage();
         List<SinType> spiderSinTags = new ArrayList<SinType>();
@@ -37,7 +34,7 @@ public class SinCityTest extends TestBase {
     }
 
     @Test
-    public void testForgive() throws MalformedURLException, InterruptedException {
+    public void testForgive() throws MalformedURLException {
         Sin evaSpieva = new Sin("spievame spolu", "dusan g. & eva m.", "spievame stale");
         SinCityPage sinCityPage = new SinCityPage();
 
