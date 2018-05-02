@@ -34,7 +34,7 @@ public class SinCityTest extends TestBase {
     }
 
     @Test
-    public void testForgive() throws MalformedURLException {
+    public void testForgive() {
         Sin evaSpieva = new Sin("spievame spolu", "dusan g. & eva m.", "spievame stale");
         SinCityPage sinCityPage = new SinCityPage();
 

@@ -19,7 +19,7 @@ public class SpartaPage {
 
     private static final String PAGE_URL = "sparta.php";
 
-    public SpartaPage() throws MalformedURLException {
+    public SpartaPage() {
         driver = WebDriverSingleton.getInstance().getDriver();
         PageFactory.initElements(driver, this);
     }

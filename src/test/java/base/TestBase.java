@@ -20,7 +20,7 @@ public class TestBase {
         WebDriverSingleton.getInstance().getDriver().quit();
     }
 
-    public WebDriver getDriver() {
+    private WebDriver getDriver() {
         return WebDriverSingleton.getInstance().getDriver();
     }
 
