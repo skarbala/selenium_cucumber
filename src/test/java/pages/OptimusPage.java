@@ -9,8 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.net.MalformedURLException;
-
 import static base.TestBase.BASE_URL;
 
 public class OptimusPage {
@@ -43,7 +41,7 @@ public class OptimusPage {
         numberInput.sendKeys(number);
     }
 
-    private void checkResult(boolean expectedPrime) {
+    public void checkResult(boolean expectedPrime) {
         if (expectedPrime) {
             new WebDriverWait(driver, 5)
                     .until(ExpectedConditions.visibilityOfElementLocated(
