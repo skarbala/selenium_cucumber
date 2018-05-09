@@ -23,7 +23,7 @@ public class WebDriverSingleton {
 
     private static WebDriverSingleton instance;
 
-    void initialize() {
+    public void initialize() {
         desiredBrowserType = getAvailableBrowserType();
         initializeFirefox();
     }
