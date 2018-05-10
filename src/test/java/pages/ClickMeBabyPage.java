@@ -42,7 +42,7 @@ public class ClickMeBabyPage {
         clickMeButton.click();
     }
 
-    public String getNumberOfclicks() {
+    public String getNumberOfClicks() {
         return numberOfClicks.getText();
     }
 

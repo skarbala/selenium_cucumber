@@ -47,9 +47,21 @@ public class SinCityPage {
     }
 
     public void fillSinInformation(Sin sin) {
-        titleInput.sendKeys(sin.getTitle());
-        authorInput.sendKeys(sin.getAuthor());
-        messageInput.sendKeys(sin.getMessage());
+        fillSinTitle(sin.getTitle());
+        fillSinAuthor(sin.getAuthor());
+        fillSinMessage(sin.getMessage());
+    }
+
+    private void fillSinTitle(String title) {
+        titleInput.sendKeys(title);
+    }
+
+    private void fillSinAuthor(String author) {
+        titleInput.sendKeys(author);
+    }
+
+    private void fillSinMessage(String message) {
+        titleInput.sendKeys(message);
     }
 
     public void markTag(List<SinType> tags) {

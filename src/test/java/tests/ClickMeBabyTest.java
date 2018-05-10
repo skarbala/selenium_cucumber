@@ -13,6 +13,6 @@ public class ClickMeBabyTest extends TestBase {
         clickMeBabyPage.openPage();
         clickMeBabyPage.clickOnButton();
 
-        Assert.assertEquals("1", clickMeBabyPage.getNumberOfclicks());
+        Assert.assertEquals("1", clickMeBabyPage.getNumberOfClicks());
     }
 }
