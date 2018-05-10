@@ -2,6 +2,7 @@ package pages;
 
 import base.WebDriverSingleton;
 import models.Sin;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -50,4 +51,7 @@ public class ClickMeBabyPage {
         return clickDescriptiton.getText();
     }
 
+    public void checkClickDescription(String expectedDescription) {
+        Assert.assertEquals(expectedDescription, getClickDescription());
+    }
 }
