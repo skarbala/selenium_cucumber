@@ -52,15 +52,15 @@ public class SinCityPage {
         fillSinMessage(sin.getMessage());
     }
 
-    private void fillSinTitle(String title) {
+    public void fillSinTitle(String title) {
         titleInput.sendKeys(title);
     }
 
-    private void fillSinAuthor(String author) {
+    public void fillSinAuthor(String author) {
         titleInput.sendKeys(author);
     }
 
-    private void fillSinMessage(String message) {
+    public void fillSinMessage(String message) {
         titleInput.sendKeys(message);
     }
 
