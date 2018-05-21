@@ -63,7 +63,7 @@ public class SinCityPage {
     }
 
     public void fillSinMessage(String message) {
-        titleInput.sendKeys(message);
+        messageInput.sendKeys(message);
     }
 
     public void markTag(List<SinType> tags) {
@@ -93,9 +93,9 @@ public class SinCityPage {
         return listOfSins.findElement(By.xpath("./li[contains(text(),'" + sin.getTitle() + "')]"));
     }
 
-    private void checkSinVisibleInTheList(Sin sin) {
+    public void checkSinVisibleInTheList(String sinTitle) {
         Assert.assertTrue(listOfSins.findElements(
-                By.xpath("./li[contains(text(),'" + sin.getTitle() + "')]")).size() > 0);
+                By.xpath("./li[contains(text(),'" + sinTitle + "')]")).size() > 0);
     }
 
     public void openDetail(Sin sin) {
