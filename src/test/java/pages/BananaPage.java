@@ -1,0 +1,51 @@
+package pages;
+
+import static base.TestBase.BASE_URL;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import base.WebDriverSingleton;
+import enumerators.BananaTableColumn;
+
+public class BananaPage {
+
+  private static final String PAGE_URL = "bananashop.php";
+  @FindBy(css = "button")
+  private WebElement submitButton;
+  @FindBy(css = "input")
+  private WebElement bananaAmountInput;
+  @FindBy(css = "table")
+  private WebElement resultTable;
+
+  private WebDriver driver;
+
+  public BananaPage() {
+    driver = WebDriverSingleton.getInstance().getDriver();
+    PageFactory.initElements(driver, this);
+  }
+
+  public void openPage() {
+    driver.get(BASE_URL + PAGE_URL);
+  }
+
+
+  public void enterBananaAmount(String bananaAmount) {
+//    new WebDriverWait(driver, 10).until(ExpectedConditions.elementto);
+    bananaAmountInput.clear();
+    bananaAmountInput.sendKeys(bananaAmount);
+  }
+
+  public String getTableValue(BananaTableColumn bananaTableColumns) {
+    return resultTable.findElement(By.xpath("//tr[" + bananaTableColumns.getRowIndex() + "]/td[2]")).getText();
+  }
+
+  public void submitBananaAmount() {
+    submitButton.click();
+  }
+}
