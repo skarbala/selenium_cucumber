@@ -1,17 +1,14 @@
 package pages;
 
-import static base.TestBase.BASE_URL;
-
+import base.WebDriverSingleton;
+import enumerators.BananaTableColumn;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import base.WebDriverSingleton;
-import enumerators.BananaTableColumn;
+import static base.TestBase.BASE_URL;
 
 public class BananaPage {
 
@@ -36,7 +33,6 @@ public class BananaPage {
 
 
   public void enterBananaAmount(String bananaAmount) {
-//    new WebDriverWait(driver, 10).until(ExpectedConditions.elementto);
     bananaAmountInput.clear();
     bananaAmountInput.sendKeys(bananaAmount);
   }
