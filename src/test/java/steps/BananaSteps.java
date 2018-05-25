@@ -1,8 +1,13 @@
 package steps;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import enumerators.BananaTableColumn;
 import pages.BananaPage;
+
+import java.util.Map;
 
 public class BananaSteps {
     private BananaPage bananaPage;
@@ -27,5 +32,12 @@ public class BananaSteps {
             bananaPage = new BananaPage();
         }
         return bananaPage;
+    }
+
+    @Then("^values in table are following$")
+    public void followingPricesAreDisplayed(DataTable table) {
+        Map<String, String> tableMap = table.asMap(String.class, String.class);
+        getBananaPage().checkTableValue(tableMap.get("total price"), BananaTableColumn.TOTAL_PRICE);
+        getBananaPage().checkTableValue(tableMap.get("discount"), BananaTableColumn.DISCOUNT);
     }
 }

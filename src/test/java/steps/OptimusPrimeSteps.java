@@ -30,8 +30,15 @@ public class OptimusPrimeSteps {
     }
 
     @Then("^Optimus says that the number is not prime$")
-    public void optimusSaysThatTheNumberIsNotPrime() throws Throwable {
+    public void optimusSaysThatTheNumberIsNotPrime() {
         new OptimusPage().checkResult(false);
+    }
+
+    private OptimusPage getOptimusPage() {
+        if (optimusPage == null) {
+            optimusPage = new OptimusPage();
+        }
+        return optimusPage;
     }
 
 }
