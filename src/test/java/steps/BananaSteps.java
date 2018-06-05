@@ -36,8 +36,8 @@ public class BananaSteps {
 
     @Then("^values in table are following$")
     public void followingPricesAreDisplayed(DataTable table) {
-        Map<String, String> tableMap = table.asMap(String.class, String.class);
-        getBananaPage().checkTableValue(tableMap.get("total price"), BananaTableColumn.TOTAL_PRICE);
-        getBananaPage().checkTableValue(tableMap.get("discount"), BananaTableColumn.DISCOUNT);
+        Map<BananaTableColumn, String> tableMap = table.asMap(BananaTableColumn.class, String.class);
+        getBananaPage().checkTableValue(tableMap.get(BananaTableColumn.TOTAL_PRICE), BananaTableColumn.TOTAL_PRICE);
+        getBananaPage().checkTableValue(tableMap.get(BananaTableColumn.DISCOUNT), BananaTableColumn.DISCOUNT);
     }
 }
