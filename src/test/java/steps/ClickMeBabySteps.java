@@ -23,6 +23,13 @@ public class ClickMeBabySteps {
         getClickMeBabyPage().checkClickDescription("klik");
     }
 
+    @When("^I click (\\d+) times? on a button$")
+    public void clickOnButton(int numberOfClicks) {
+        for (int i = 0; i < numberOfClicks; i++) {
+            getClickMeBabyPage().clickOnButton();
+        }
+    }
+
     private ClickMeBabyPage getClickMeBabyPage() {
         if (clickMeBabyPage == null) {
             clickMeBabyPage = new ClickMeBabyPage();
