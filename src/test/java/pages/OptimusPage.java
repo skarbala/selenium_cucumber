@@ -38,6 +38,7 @@ public class OptimusPage {
     }
 
     public void enterNumber(String number) {
+        numberInput.clear();
         numberInput.sendKeys(number);
     }
 
