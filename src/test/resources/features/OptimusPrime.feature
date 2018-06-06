@@ -13,5 +13,5 @@ Feature: Optimus Prime
       | 1      | prime          |
       | 5      | prime          |
       | 6      | not prime      |
-      | 48     | prime          |
+      | 47     | prime          |
       | 100    | not prime      |

@@ -14,7 +14,7 @@ public class OptimusPrimeSteps {
         getOptimusPage().openPage();
     }
 
-    @When("^I enter number (\\d)$")
+    @When("^I enter number (\\d+)$")
     public void iEnterNumber(int number) {
         getOptimusPage().enterNumber(String.valueOf(number));
     }
@@ -24,14 +24,13 @@ public class OptimusPrimeSteps {
         getOptimusPage().clickOnButton();
     }
 
-    @Then("^Optimus says that the number is prime$")
-    public void optimusSaysThatTheNumberIsPrime() {
-        getOptimusPage().checkResult(true);
-    }
-
-    @Then("^Optimus says that the number is not prime$")
-    public void optimusSaysThatTheNumberIsNotPrime() {
-        new OptimusPage().checkResult(false);
+    @Then("^Optimus says that the number is (prime|not prime)$")
+    public void optimusSaysThatTheNumberIsPrime(String expectedPrime) {
+        if (expectedPrime.contains("not")) {
+            getOptimusPage().checkResult(false);
+        } else {
+            getOptimusPage().checkResult(true);
+        }
     }
 
     private OptimusPage getOptimusPage() {
