@@ -18,9 +18,9 @@ public class ClickMeBabySteps {
         getClickMeBabyPage().clickOnButton();
     }
 
-    @Then("^description is 'klik'$")
-    public void descriptionIsKlik() {
-        getClickMeBabyPage().checkClickDescription("klik");
+    @Then("^description is (\\D+)$")
+    public void descriptionIsKlik(String expectedDescription) {
+        getClickMeBabyPage().checkClickDescription(expectedDescription);
     }
 
     @When("^I click (\\d+) times? on a button$")
