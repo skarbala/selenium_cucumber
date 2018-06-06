@@ -18,7 +18,7 @@ public class ClickMeBabySteps {
         getClickMeBabyPage().clickOnButton();
     }
 
-    @Then("^description is (\\D+)$")
+    @Then("^description is (\\w+\\s?\\w+)$")
     public void descriptionIsKlik(String expectedDescription) {
         getClickMeBabyPage().checkClickDescription(expectedDescription);
     }

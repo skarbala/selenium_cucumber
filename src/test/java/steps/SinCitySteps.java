@@ -60,7 +60,7 @@ public class SinCitySteps {
     public void iSelectFollowingSins(List<String> tags) {
         List<SinType> sinTypes = tags
                 .stream()
-                .map(s -> SinType.valueOf(s.toUpperCase().replace(" ", "_")))
+                .map(s -> SinType.valueOf(s.toUpperCase().replaceAll("\\s","_")))
                 .collect(Collectors.toList());
         getSinCityPage().markTag(sinTypes);
     }
