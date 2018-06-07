@@ -1,13 +1,14 @@
 package pages;
 
-import static base.TestBase.BASE_URL;
-
+import base.WebDriverSingleton;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import base.WebDriverSingleton;
+import static base.TestBase.BASE_URL;
+import static org.junit.Assert.assertTrue;
 
 public class RegistrationPage {
 
@@ -30,7 +31,7 @@ public class RegistrationPage {
   @FindBy(id = "checkbox")
   private WebElement robotCheckbox;
 
-  @FindBy(css = "btn.btn-success")
+  @FindBy(css = "button.btn-success")
   private WebElement submitButton;
 
   private WebDriver driver;
@@ -75,5 +76,9 @@ public class RegistrationPage {
 
   public void submitRegistration() {
     submitButton.click();
+  }
+
+  public void checkRegistrationFailed(){
+    assertTrue(driver.findElement(By.cssSelector("div.alert-danger")).isDisplayed());
   }
 }
