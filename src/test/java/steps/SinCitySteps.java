@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class SinCitySteps {
     private SinCityPage sinCityPage;
 
-    @Given("^I am on Sin City page$")
+    @Given("^I (?:am on|open) Sin City page$")
     public void iAmOnSinCityPage() {
         getSinCityPage().openPage();
     }
@@ -63,5 +63,11 @@ public class SinCitySteps {
                 .map(s -> SinType.valueOf(s.toUpperCase().replaceAll("\\s","_")))
                 .collect(Collectors.toList());
         getSinCityPage().markTag(sinTypes);
+    }
+
+    @And("^I enter sin title (.+) and sin author (.+)$")
+    public void iEnterSinTitlePocuvamOneDirectionAndSinAuthorBrano(String title, String author) {
+      getSinCityPage().fillSinTitle(title);
+      getSinCityPage().fillSinAuthor(author);
     }
 }
