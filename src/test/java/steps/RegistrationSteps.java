@@ -4,6 +4,7 @@ import cucumber.api.java.en.*;
 import pages.RegistrationPage;
 
 public class RegistrationSteps {
+    private static final String INVALID_PASSWORD = "1234";
     private RegistrationPage registrationPage;
 
     @Given("^I am on the registration page$")
@@ -30,7 +31,9 @@ public class RegistrationSteps {
     public void iEnterPassword(String password) {
         registrationPage.enterPassword(password);
 
-    } @But("^I repeat password (.*)$")
+    }
+
+    @But("^I repeat password (.*)$")
     public void iRepeatPassword(String password) {
         registrationPage.enterPasswordRepeat(password);
     }
@@ -55,5 +58,15 @@ public class RegistrationSteps {
     @Then("^the registration fails$")
     public void theRegistrationFails() {
         getRegistrationPage().checkRegistrationFailed();
+    }
+
+    @When("^I enter and repeat invalid password$")
+    public void iEnterInvalidPassword() {
+        getRegistrationPage().enterPassword(INVALID_PASSWORD);
+        getRegistrationPage().enterPasswordRepeat(INVALID_PASSWORD);
+    }
+
+    @And("^I repeat invalid password$")
+    public void iRepeatInvalidPassword() {
     }
 }
