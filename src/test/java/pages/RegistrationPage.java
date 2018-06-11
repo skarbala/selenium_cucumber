@@ -81,4 +81,7 @@ public class RegistrationPage {
   public void checkRegistrationFailed(){
     assertTrue(driver.findElement(By.cssSelector("div.alert-danger")).isDisplayed());
   }
+  public void checkRegistrationSucceeded(){
+    assertTrue(driver.findElement(By.cssSelector("div.alert-success")).isDisplayed());
+  }
 }
