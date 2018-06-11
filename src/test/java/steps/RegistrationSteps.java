@@ -5,6 +5,10 @@ import pages.RegistrationPage;
 
 public class RegistrationSteps {
     private static final String INVALID_PASSWORD = "1234";
+    private static final String VALID_PASSWORD = "12345";
+    private static final String VALID_EMAIL = "dionyz@fekete.hu";
+    private static final String VALID_NAME = "dionyz";
+    private static final String VALID_SURNAME = "fekete";
     private RegistrationPage registrationPage;
 
     @Given("^I am on the registration page$")
@@ -68,5 +72,23 @@ public class RegistrationSteps {
 
     @And("^I repeat invalid password$")
     public void iRepeatInvalidPassword() {
+    }
+
+    @When("^I enter and repeat valid password$")
+    public void iEnterAndRepeatValidPassword() {
+        getRegistrationPage().enterPassword(VALID_PASSWORD);
+        getRegistrationPage().enterPasswordRepeat(VALID_PASSWORD);
+    }
+
+    @Then("^the registration succeeds$")
+    public void theRegistrationSucceeds() {
+        getRegistrationPage().checkRegistrationSucceeded();
+    }
+
+    @And("^I enter valid email, name, surname$")
+    public void iEnterValidEmailNameSurname() {
+      getRegistrationPage().enterEmail(VALID_EMAIL);
+      getRegistrationPage().enterName(VALID_NAME);
+      getRegistrationPage().enterSurname(VALID_SURNAME);
     }
 }
