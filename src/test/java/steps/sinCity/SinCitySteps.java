@@ -1,4 +1,4 @@
-package steps;
+package steps.sinCity;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
