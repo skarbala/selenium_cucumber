@@ -25,5 +25,5 @@ Feature: Confess new sin
     And I select following sins
       | murder | robbery | car accident |
 
-#    When I confess my sin
-#    Then my sin appears in the list of all sins
+    When I confess my sin
+    Then my sin appears in the list of all sins
