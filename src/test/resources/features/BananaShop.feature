@@ -1,3 +1,4 @@
+@banana
 Feature: Banana shop
   As a user I would like to get information about price of bananas
 

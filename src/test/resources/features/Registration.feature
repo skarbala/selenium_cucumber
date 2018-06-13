@@ -1,3 +1,4 @@
+@registration
 Feature: Registration
 
   Background: Open registration page and enter basic user data
@@ -11,6 +12,7 @@ Feature: Registration
 
     Then the registration fails
 
+  @smoke
   Scenario: Registration with valid password
     When I enter and repeat valid password
     And I click on registration button

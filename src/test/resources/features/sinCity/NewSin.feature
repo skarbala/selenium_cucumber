@@ -1,3 +1,4 @@
+@sin-city
 Feature: Confess new sin
   As a sinner
   I want to confess a sin
@@ -6,18 +7,21 @@ Feature: Confess new sin
   Background: I am on Sin City page
     Given I open Sin City page
 
+  @smoke @release
   Scenario: Confess new valid Sin without tags
     And I enter sin title pocuvam one direction and sin author brano
     And I enter sin message
     When I confess my sin
     Then my sin appears in the list of all sins
 
+  @ignore
   Scenario: Confess new valid Sin without tags
     And I enter sin title
     And I enter sin message
     When I confess my sin
     Then my sin appears in the list of all sins
 
+  @release
   Scenario: Confess new valid Sin with tags
     And I enter sin title
     And I enter sin author
