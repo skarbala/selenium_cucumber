@@ -14,7 +14,7 @@ Feature: Click me baby
     Given I am on click me baby page
     When  I click 2 times on a button
     Then  description is kliky
-
+  @smoke @release
   Scenario: Click on button five times
     Given I am on click me baby page
     When  I click 5 times on a button
