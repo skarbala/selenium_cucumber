@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 //        tags = {"@smoke or @release"},
         //AND
 //        tags = {"@smoke", "@release"},
-        tags = {"not ignore"},
+        tags = {"not @ignore"},
         junit = "--step-notifications"
 )
 public class ClickMeBabyRunner {
