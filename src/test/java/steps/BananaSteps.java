@@ -1,6 +1,7 @@
 package steps;
 
 import cucumber.api.DataTable;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -39,5 +40,10 @@ public class BananaSteps {
         Map<BananaTableColumn, String> tableMap = table.asMap(BananaTableColumn.class, String.class);
         getBananaPage().checkTableValue(tableMap.get(BananaTableColumn.TOTAL_PRICE), BananaTableColumn.TOTAL_PRICE);
         getBananaPage().checkTableValue(tableMap.get(BananaTableColumn.DISCOUNT), BananaTableColumn.DISCOUNT);
+    }
+
+    @And("^price for one banana is 1.5 .*$")
+    public void priceForOneBananaIs() {
+        System.out.println("Nothing here");
     }
 }
