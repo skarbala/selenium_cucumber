@@ -2,6 +2,7 @@
 Feature: Banana shop
   As a user I would like to get information about price of bananas
 
+  @smoke
   Scenario: Check banana price
     Given I am on banana shop page
     And price for one banana is 1.5 €
