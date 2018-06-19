@@ -6,7 +6,7 @@ import cucumber.api.java.Before;
 
 public class TaggedHooks {
 
-    @Before(value = "~@dbconnection",order = 1)
+    @Before(value = "@dbconnection", order = 1)
     public void dbconnect() {
         System.out.println("pripajam sa na databazu");
     }
