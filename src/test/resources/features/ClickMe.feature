@@ -3,7 +3,7 @@ Feature: Click me baby
   I want to click a button
   For no reason at all, only for study purpose
 
-  @smoke @release
+  @smoke @release @maximize @dbconnection
   Scenario: Click on button once
     Given I am on click me baby page
     When  I click 1 time on a button
