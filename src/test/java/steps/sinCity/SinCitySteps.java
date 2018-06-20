@@ -12,6 +12,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static hooks.TaggedHooks.getScenario;
+
 public class SinCitySteps {
     private SinCityPage sinCityPage;
     private Sin sin;
@@ -70,6 +72,7 @@ public class SinCitySteps {
     @And("^I enter sin title (.+) and sin author (.+)$")
     public void iEnterSinTitlePocuvamOneDirectionAndSinAuthorBrano(String title, String author) {
         getSinCityPage().fillSinTitle(title);
+        getScenario().write("Title "+title+" entered");
         getSinCityPage().fillSinAuthor(author);
     }
 

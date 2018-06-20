@@ -1,5 +1,6 @@
 package steps;
 
+import base.WebDriverSingleton;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -10,12 +11,15 @@ import pages.BananaPage;
 
 import java.util.Map;
 
+import static hooks.TaggedHooks.getScenario;
+
 public class BananaSteps {
     private BananaPage bananaPage;
 
     @Given("^I am on banana shop page$")
     public void iAmOnBananaShopPage() {
         getBananaPage().openPage();
+        getScenario().write(WebDriverSingleton.getInstance().getDriver().getCurrentUrl());
     }
 
     @When("^price for one banana is 1.5$")
