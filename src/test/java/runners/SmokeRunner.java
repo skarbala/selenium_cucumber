@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = {"steps", "hooks"},
         tags = {"@smoke"},
-        junit = "--step-notifications"
+        junit = "--step-notifications",
+        format = {"json:target/reports/cucumber-reports/SmokeRunner.json"}
 )
 public class SmokeRunner {
 }
