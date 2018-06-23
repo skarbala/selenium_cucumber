@@ -17,6 +17,5 @@ public class BananaTest extends TestBase {
     bananaPage.enterBananaAmount("11");
     bananaPage.submitBananaAmount();
     assertEquals("1.65 €", bananaPage.getTableValue(BananaTableColumn.DISCOUNT));
-
   }
 }
