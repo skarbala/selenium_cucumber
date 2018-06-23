@@ -85,7 +85,7 @@ public class WebDriverSingleton {
         try {
             desiredBrowserType = AvailableBrowserType.valueOf(browserType.toUpperCase());
         } catch (IllegalArgumentException i) {
-            throw new IllegalArgumentException("Browser " + browserType + " not supported");
+            throw new IllegalArgumentException("Browser type " + browserType + " not supported");
         }
         return desiredBrowserType;
     }
