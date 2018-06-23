@@ -21,7 +21,6 @@ public class OptimusPage {
     @FindBy(css = "button.btn")
     private WebElement submitButton;
 
-
     private WebDriver driver;
 
     private static final String PAGE_URL = "primenumber.php";
