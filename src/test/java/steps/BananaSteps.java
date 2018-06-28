@@ -22,10 +22,6 @@ public class BananaSteps {
         getScenario().write(WebDriverSingleton.getInstance().getDriver().getCurrentUrl());
     }
 
-    @When("^price for one banana is 1.5$")
-    public void priceForOneBananaIs() {
-    }
-
     @When("^I have chosen 1 banana$")
     public void iHaveChosenBanana() {
         getBananaPage().enterBananaAmount("1");
