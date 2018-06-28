@@ -3,5 +3,5 @@ Feature: Banana shop
 
   Scenario: Check banana price
     Given I am on banana shop page
-    And price for one banana is 1.5 €
+    And price for one banana is 1.5
     And I have chosen 1 banana
