@@ -42,7 +42,7 @@ public class BananaSteps {
         getBananaPage().checkTableValue(tableMap.get(BananaTableColumn.DISCOUNT), BananaTableColumn.DISCOUNT);
     }
 
-    @And("^price for one banana is 1.5 .*$")
+    @And("^price for one banana is 1.5$")
     public void priceForOneBananaIs() {
         System.out.println("Nothing here");
     }
